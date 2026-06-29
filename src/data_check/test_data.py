@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import scipy.stats
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 def test_column_names(data: pd.DataFrame) -> None:
@@ -87,3 +90,22 @@ def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_th
 ########################################################
 # Implement here test_row_count and test_price_range   #
 ########################################################
+def test_row_count(data):
+    """
+    Test if the DataFrame has a reasonable number of rows.
+    
+    Args:
+        data: Input DataFrame to test
+    """
+    # Check that the number of rows is greater than 0 and less than a reasonable upper limit
+    assert 15000 < data.shape[0] < 100000
+def test_price_range(data):
+    """
+    Test if the price values are within a reasonable range.
+    
+    Args:
+        data: Input DataFrame to test
+    """
+    # Check that the price values are positive and within a reasonable upper limit
+    assert (data['price'] > 0).all(), "Price values must be positive."
+    assert (data['price'] < 10000).all(), f"Price values exceed reasonable upper limit."
