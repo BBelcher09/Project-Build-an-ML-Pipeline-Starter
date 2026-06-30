@@ -118,9 +118,10 @@ def go(config: DictConfig):
             mlflow.run(
                 os.path.join(hydra.utils.get_original_cwd(), "components", "test_regression_model"),
                 entry_point="main",
+                env_manager="local",
                 parameters={
-                "mlflow_model": "random_forest_export:prod",  
-                "test_dataset": "test_data.csv:latest",       
+                "mlflow_model": "models-western-governors-university2633/models-western-governors-university2633/random_forest_export:prod",
+                "test_dataset": "models-western-governors-university2633/models-western-governors-university2633/test_data.csv:latest"
                 },
             )
 
