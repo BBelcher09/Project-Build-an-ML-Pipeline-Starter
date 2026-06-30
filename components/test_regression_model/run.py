@@ -4,6 +4,9 @@ This step takes the best model, tagged with the "prod" tag, and tests it against
 """
 import argparse
 import logging
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import wandb
 import mlflow
 import pandas as pd
