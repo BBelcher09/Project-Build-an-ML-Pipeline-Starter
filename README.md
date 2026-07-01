@@ -179,3 +179,11 @@ Please, make sure all steps are using **the same** python version and that you h
 ## License
 
 [License](LICENSE.txt)
+
+
+
+## LINKS
+## W&B
+##  https://wandb.ai/models-western-governors-university2633/models-western-governors-university2633?nw=nwuserblairsopcak2000
+## Git
+##  https://github.com/BBelcher09/Project-Build-an-ML-Pipeline-Starter
